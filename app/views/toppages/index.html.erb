@@ -1,15 +1,19 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1 class="text-uppercase text-muted font-weight-bold">お仕事マッチングサイト</h1>
-  </div> 
-</div>
-<div class="container py-4">
-  <div class="text-center">
-    <%= link_to 'お仕事をご登録の企業様' %>
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1 class="text-uppercase text-muted font-weight-bold">お仕事マッチングサイト</h1>
+    </div> 
   </div>
-</div>
-<div class="container py-4">
-  <div class="text-center">
-    <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+  <div class="container py-4">
+    <div class="text-center">
+      <%= link_to 'お仕事をご登録の企業様' %>
+    </div>
   </div>
-</div>
+  <div class="container py-4">
+    <div class="text-center">
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>
